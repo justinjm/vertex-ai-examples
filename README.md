@@ -9,13 +9,18 @@ A collection of example notebooks, scripts and end-to-end example solutions usin
   * 00_setup.ipynb
   * 01_intro_sdk.ipynb
   * 02_automl_propensity_code.ipynb
+  * 03_automl_hello_tabular_bank_marketing.ipynb
 * 02-bqml: BigQuery ML examples
-  * bqml_ga4.ipynb
-* docs
-  * training_diagram: a visual (original by [Mike Hendersen](https://github.com/statmike), [here](https://github.com/statmike/vertex-ai-mlops/blob/main/architectures/overview/training2.png))
-* r-examples: R on Google Cloud examples
-  * training_r_using_r_kernel/
+  * 01_bqml_propensity.md
+  * 02_bqml-feature-engineering-auto.ipynb
+  * 03_bqml-feature-engineering-advanced.ipynb
+  * 04_bqml_ga4_gaming_churn.ipynb
+* 98-r-examples: R on Google Cloud examples
+  * training_r_using_r_kernel - copy of [notebook](https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/ml_ops/stage2/get_started_vertex_training_r_using_r_kernel.ipynb) to support the [blog post](https://cloud.google.com/blog/products/ai-machine-learning/train-and-deploy-ml-models-with-r-and-plumber-on-vertex-ai)
   * googleCloudStorageR_in_notebook.ipynb
+* docs: 
+  * training_diagram: a visual (original by [Mike Hendersen](https://github.com/statmike), [here](https://github.com/statmike/vertex-ai-mlops/blob/main/architectures/overview/training2.png))
+
 
 ## Acknowledgements
 
