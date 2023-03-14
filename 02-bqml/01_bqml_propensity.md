@@ -1,6 +1,6 @@
 # Predicting customer propensity to buy by using BigQuery ML and AI Platform
 
-DEPRECATED: this tutorial no longer works, see [02-bqml/bqml-churn-ga4.ipynb](bqml-churn-ga4.ipynb)
+DEPRECATED: this tutorial is outdated (uses GA 360, pre-aggregated dataset). See [02-bqml/bqml-churn-ga4.ipynb](/02-bqml/04_bqml_ga4_gaming_churn.ipynb) for updated version.
 
 [Predicting customer propensity to buy by using BigQuery ML and AI Platform | Cloud Architecture Center | Google Cloud](https://cloud.google.com/architecture/predicting-customer-propensity-to-buy)
 
