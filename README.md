@@ -18,6 +18,7 @@ A collection of example notebooks, scripts and end-to-end example solutions usin
 * 98-r-examples: R on Google Cloud examples
   * training_r_using_r_kernel - copy of [notebook](https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/ml_ops/stage2/get_started_vertex_training_r_using_r_kernel.ipynb) to support the [blog post](https://cloud.google.com/blog/products/ai-machine-learning/train-and-deploy-ml-models-with-r-and-plumber-on-vertex-ai)
   * googleCloudStorageR_in_notebook.ipynb
+* generative-ai: GenAI examples
 * docs: 
   * training_diagram: a visual (original by [Mike Hendersen](https://github.com/statmike), [here](https://github.com/statmike/vertex-ai-mlops/blob/main/architectures/overview/training2.png))
 
