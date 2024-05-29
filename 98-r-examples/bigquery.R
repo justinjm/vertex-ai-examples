@@ -13,50 +13,43 @@ bq_auth(token = token)
 
 project_id <- Sys.getenv("GCP_PROJECT_ID")
 
-dataset <- paste(project_id, "bigrquerytest1", sep = ".")
-table <- paste(dataset, "loan", sep = ".")
+dataset <- paste(project_id, "bigrquerytest", sep = ".")
+table <- paste(dataset, "data", sep = ".")
 
 bq_project_datasets(project_id)
 
-bq_dataset_create(dataset, location = "US")
+bq_dataset_create(dataset, location = "us-central1")
 
 bq_dataset_exists(dataset)
 bq_dataset_tables(dataset)
 
 bq_table_load(table,
-              fields = list(
-                bq_field("id",              "INTEGER"),
-                bq_field("member_id",       "INTEGER"),
-                bq_field("loan_amnt",       "INTEGER"),
-                bq_field("term_in_months",  "INTEGER"),
-                bq_field("interest_rate",   "FLOAT"),
-                bq_field("payment",         "FLOAT"),
-                bq_field("grade",           "STRING"),
-                bq_field("sub_grade",       "STRING"),
-                bq_field("employment_length", "INTEGER"),
-                bq_field("home_owner",      "INTEGER"),
-                bq_field("income",          "FLOAT"),
-                bq_field("verified",        "INTEGER"),
-                bq_field("default",         "INTEGER"),
-                bq_field("purpose",         "STRING"),
-                bq_field("zip_code",        "STRING"),
-                bq_field("addr_state",      "STRING"),
-                bq_field("open_accts",      "INTEGER"),
-                bq_field("credit_debt",     "INTEGER")
-              ),
+              fields = as_bq_fields(                
+                list(
+                  list(name = "longitude", type = "STRING"),
+                  list(name = "latitude", type = "STRING"),
+                  list(name = "housing_median_age", type = "STRING"),
+                  list(name = "total_rooms", type = "STRING"),
+                  list(name = "total_bedrooms", type = "STRING"),
+                  list(name = "population", type = "STRING"),
+                  list(name = "households", type = "STRING"),
+                  list(name = "median_income", type = "STRING"),
+                  list(name = "median_house_value", type = "STRING")
+                  )
+                ),
               nskip = 1,
               source_format = "CSV",
-              source_uris = "gs://demos-vertex-ai-bq-staging/loan_200k.csv",
+              source_uris = "gs://cloud-samples-data/ai-platform-unified/datasets/tabular/california-housing-tabular-regression.csv",
               create_disposition = "CREATE_IF_NEEDED", 
               write_disposition = "WRITE_TRUNCATE")
 
 bq_table_fields(table)
 
-bq_table_delete(table)
-
-
-
-
+## cleanup
+### delete table
+# bq_table_delete(table)
+### detele dataset
+# bq_dataset_delete(dataset)
 
 ## Gargle 
 # https://github.com/r-lib/gargle
