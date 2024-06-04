@@ -8,9 +8,27 @@
 # 2) manually set constants below with "your-project-id" and "your-email" 
 
 ## set constants
-## manually set these if not using .Renviron file
-PROJECT_ID  <- Sys.getenv("GCP_PROJECT_ID")
-GARGLE_EMAIL <- Sys.getenv("GARGLE_EMAIL")
+### option 1: set from Renviron
+# PROJECT_ID  <- Sys.getenv("GCP_PROJECT_ID")
+# GARGLE_EMAIL <- Sys.getenv("GARGLE_EMAIL")
+
+### optoion 2: manually set these if not using .Renviron file
+PROJECT_ID <- "your-project-id"
+GARGLE_EMAIL <- "your-email@your-company-name.com"
+
+#### try to set from gcloud if not specified
+## https://cloud.google.com/sdk/docs/install-sdk
+## https://cloud.google.com/sdk/docs/cheatsheet
+if (PROJECT_ID == "your-project-id") {
+  PROJECT_ID <- system("gcloud config get-value project", intern = TRUE)
+}
+if (GARGLE_EMAIL == "your-email@your-company-name.com") {
+  GARGLE_EMAIL <- system("gcloud config get-value core/account", intern = TRUE)
+}
+
+### sanity check
+print(paste("PROJECT_ID:", PROJECT_ID))
+print(paste("GARGLE_EMAIL:", GARGLE_EMAIL))
 
 LOCATION <- "us-central1"
 DATASET_NAME <- "bigrquerytest"
