@@ -3,16 +3,15 @@
 source args
 
 ## enable APIS ------------------------------------------------------------------
-gcloud services enable compute.googleapis.com
-gcloud services enable iam.googleapis.com
-gcloud services enable iamcredentials.googleapis.com
-gcloud services enable monitoring.googleapis.com
-gcloud services enable logging.googleapis.com
-gcloud services enable bigquery.googleapis.com
-gcloud services enable bigquerystorage.googleapis.com
-gcloud services enable bigquerydatatransfer.googleapis.com
-gcloud services enable monitoring.googleapis.com
-gcloud services enable sqladmin.googleapis.com
+gcloud services enable \
+  iam.googleapis.com \
+  iamcredentials.googleapis.com \
+  monitoring.googleapis.com \
+  logging.googleapis.com \
+  bigquery.googleapis.com \
+  bigquerystorage.googleapis.com \
+  bigquerydatatransfer.googleapis.com \
+
 
 ## create bucket ------------------------------------------------------------------
 gsutil mb -l ${LOCATION} gs://${BUCKET}
