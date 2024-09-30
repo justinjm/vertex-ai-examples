@@ -5,6 +5,7 @@ PROJECT_NUMBER=$(gcloud projects describe $(gcloud config get-value project) --f
 REGION="us-central1"
 LOCATION="us-central1"
 DEFAULT_SVC_ACCOUNT_EMAIL="$PROJECT_NUMBER-compute@developer.gserviceaccount.com"
+
 APP_NAME="$PROJECT_ID-bq-eventarc-driven-queries"
 BUCKET=$APP_NAME
 
@@ -19,8 +20,8 @@ SVC_ACCOUNT_EMAIL="$APP_NAME@$PROJECT_ID.iam.gserviceaccount.com"
 # IMAGE_NAME="$APP_NAME-image"
 # IMAGE_TAG="latest"
 # IMAGE_URI="$REGION-docker.pkg.dev/$PROJECT_ID/$DOCKER_REPO/$IMAGE_NAME:$IMAGE_TAG"
-CLOUD_RUN_SERVICE_NAME="$APP_NAME"
-
+# CLOUD_RUN_SERVICE_NAME="$APP_NAME"
+CLOUD_FUNCTION_NAME="$APP_NAME"
 
 echo "==================== args ====================================================================="
 echo "PROJECT_ID:                  " $PROJECT_ID
@@ -38,5 +39,6 @@ echo "SVC_ACCOUNT_EMAIL:           " $SVC_ACCOUNT_EMAIL
 # echo "IMAGE_NAME:                  " $IMAGE_NAME
 # echo "IMAGE_TAG:                   " $IMAGE_TAG
 # echo "IMAGE_URI:                   " $IMAGE_URI
-echo "CLOUD_RUN_SERVICE_NAME:      " $CLOUD_RUN_SERVICE_NAME
+# echo "CLOUD_RUN_SERVICE_NAME:      " $CLOUD_RUN_SERVICE_NAME
+echo "CLOUD_FUNCTION_NAME:         " $CLOUD_FUNCTION_NAME
 echo "================================================================================================="
