@@ -19,3 +19,16 @@ bq load \
     gs://${BUCKET}/${DATA_FILE_CSV}
 # https://cloud.google.com/bigquery/docs/reference/bq-cli-reference#bq_load
 # https://cloud.google.com/bigquery/docs/bq-command-line-tool
+
+
+## create scheduled query 
+## todo - https://cloud.google.com/bigquery/docs/scheduling-queries#bq
+
+# bq query \
+# --display_name=name \
+# --destination_table=loan_201_processed \
+# --schedule='on-demand` \
+
+
+# SELECT * FROM `demos-vertex-ai.bq_eventarc_queries_demo.loan_201` LIMIT 10
+
